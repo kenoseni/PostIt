@@ -1,0 +1,21 @@
+<% include partials/header.ejs %>
+<div id='center'>
+  <h1><%= title %></h1>
+  <p>Fill in the form below to login</p>
+
+    <form method="POST" action="/api/user/signin">
+        <label>Username</label>
+        <div>
+            <input type="text" name="user_name" placeholder='Username' autofocus>
+        </div>
+        <label>PassWord</label>
+        <div>
+            <input type="password" name="password" placeholder='Password'>
+        </div>
+        <div>
+            <input type="submit" value="SIGN IN">
+        </div>
+    </form>
+</div>
+
+<% include partials/footer.ejs %>

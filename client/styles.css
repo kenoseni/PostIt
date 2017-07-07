@@ -1,0 +1,39 @@
+input[type=text] {
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 2px solid black;
+        border-radius: 4px;
+    }
+    input[type=password] {
+        padding: 12px 20px;
+        margin: 8px 0;
+        border: 2px solid black;
+        border-radius: 4px;
+    }
+    input[type=submit] {
+        background-color: #2CAF20;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+    #center {
+        margin: auto;
+        width: 30%;
+        border: 3px 0 solid black;
+        padding: 100px;
+        height: 400px;   
+        background-color: firebrick;
+    }
+
+    #post {
+        padding: 12px 20px;
+        margin: 8px 0;
+        border: 2px solid black;
+        border-radius: 4px;
+        width: 70%;
+        
+    }

@@ -1,0 +1,26 @@
+<% include partials/header.ejs %>
+<div id="center">
+  <h1><%= title %></h1>
+  <p>Fill in the form below to sign up</p>
+
+    <form method="post" action="/api/user/signup">
+      <div>
+        <label>Username</label>
+        <div>
+            <input type="text" name="user_name" placeholder='Username' autofocus>
+        </div>
+            <label>Email</label>
+        <div>
+            <input type="text" name="email" placeholder='Email'>
+        </div>
+            <label>PassWord</label>
+        <div>
+            <input type="password" name="password" placeholder='Password'>
+        </div>
+        
+        <div>
+            <input type="submit" value="SIGN UP">
+        </div>
+    </form>
+</div>
+<% include partials/footer.ejs %>

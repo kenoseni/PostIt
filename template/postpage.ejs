@@ -1,0 +1,17 @@
+<% include partials/header.ejs %>
+<div id='center'>
+<h1>Post</h1>
+<p>Fill in the form below to add a new post.</p>
+<form  method='post' action='/group/groupid/messages'>
+<div>
+<input type='text' name='Title' placeholder='Title' />
+</div>
+<div>
+<textarea id='post' name='body' placeholder='Body'></textarea>
+</div>
+<div>
+<input type='submit' value='Post' />
+</div>
+</form>
+</div>
+<% include partials/footer.ejs %>
