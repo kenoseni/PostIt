@@ -1,12 +1,15 @@
+// call required modules
 const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const path = require('path');
 
+// Middleware to use for all request
 const login = require('./routes/login');
 const register = require('./routes/register');
 const dashboard = require('./routes/dashboard');
 const postpage = require('./routes/postpage');
+const welcome = require('./routes/welcome');
 
 // Set up the express app
 const app = express();
@@ -24,9 +27,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, './client')));
 
-
+// creating routes
+app.use('/', welcome);
 app.use('/login', login);
-
 app.use('/register', register);
 app.use('/dashboard', dashboard);
 app.use('/postpage', postpage);

@@ -11,7 +11,7 @@ router.get('/', (req, res, next) => {
     res.status(200).render('register', {title: 'Register'})
 });
 router.post('/user/signup', (req, res, next) => {
-    console.log(req.body.user_name);
+    
 });
 
 module.exports = router;
