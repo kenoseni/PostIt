@@ -3,9 +3,11 @@ module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
     name: {
       type: DataTypes.STRING,
+      allowNull: false
     },
     email: {
       type: DataTypes.STRING,
+      allowNull: false
     },
     password: {
       type: DataTypes.STRING
@@ -14,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
     classMethods: {
       associate: models => {
         // associations can be defined here
-        User.belongsToMany(models.Group_admin, {through:'Members', foreignkey:'groupid'})
+        User.belongsToMany(models.Group_admin, {through:'Members', foreignkey:'userid'})
         User.hasMany(models.Message, {onDelete:"CASCADE", foreighkey:'userid'})
       }
     },
