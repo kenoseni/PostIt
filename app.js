@@ -3,6 +3,7 @@ const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const path = require('path');
+const session = require('express-session');
 
 // Middleware to use for all request
 const login = require('./routes/login');
@@ -27,15 +28,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, './client')));
 
-// creating routes
+// Require routes into the application
+require('./server/routes')(app);
 app.use('/', welcome);
 app.use('/login', login);
 app.use('/register', register);
 app.use('/dashboard', dashboard);
 app.use('/postpage', postpage);
-app.use('/api', register);
-app.use('/api', login);
-app.use('/api', dashboard);
 
 
 module.exports = app;
