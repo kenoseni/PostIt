@@ -30,7 +30,7 @@ module.exports = {
     addUser(req, res) {
         const groupId = req.params.groupId;
         const userId = req.body.userId;
-        Groups.findById(groupId).then((group) => {
+        Group.findById(groupId).then((group) => {
             if (!group) {
                 res.send('Group not found');
             } else {
