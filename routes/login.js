@@ -15,13 +15,4 @@ router.get('/', (req, res, next) => {
     next();
 });
 
-router.post('/user/signin', (req, res, next) => {
-    /*let body = { 
-        Username: req.body.user_name,
-        Password: req.body.password
-    }*/
-    res.json(req.body);
-    console.log('hello');
-});
-
 module.exports = router;
