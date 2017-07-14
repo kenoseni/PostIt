@@ -8,8 +8,8 @@ application allows people create accounts, create groups and add registered user
 and then send messages out to these groups whenever they want.
 
 ### Features
-*Sign Up and Sign In 
-*Create Braodcast Group
+* Sign Up and Sign In 
+* Create Braodcast Group
 
 
 ### Structure
