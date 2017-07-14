@@ -12,4 +12,7 @@ module.exports = (app) => {
     app.post('/api/group', groupController.create);
 
     app.post('/api/group/:id/user', groupController.addUser);
+
+
+    app.post('/api/group/:id/message', groupController.postMessage);
 }

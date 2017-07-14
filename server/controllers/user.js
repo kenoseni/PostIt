@@ -19,7 +19,6 @@ module.exports = {
             if(!user) {
                 return res.status(404).send('user not found')
              }
-           // req.session.user = user;
             res.status(202).send(user); 
         })
         .catch(error => res.status(400).send(error));

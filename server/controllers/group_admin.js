@@ -18,15 +18,7 @@ module.exports = {
             .then(group_admin => req.status(400).send(group_admin))
             .catch(error => res.status(400).send(error))             
     },
-    getMessage(req, res) {
-        return Group
-            .findOne({where:
-                {groupId: req.param.groupId}})
-            .then(group_admin => {
-                res.send(group_admin.message)
-            })
-            .catch(error => res.status(400).send(error))
-    },
+    
     addUser(req, res) {
         const groupId = req.params.groupId;
         const userId = req.body.userId;
@@ -42,7 +34,7 @@ module.exports = {
                             if (result) {
                                  res.send('User Already Exists In This Group');
                             } else {
-                                group.addUser(userId);
+                                group_admin.addUser(userId);
                                 res.send('User Added Successfully');
                             }
                         });
@@ -51,5 +43,23 @@ module.exports = {
             }
         })
         .catch(error => res.status(400).send(error));
-    }
+    },
+    postMessage(req, res) {
+    const groupId = req.params.groupId;
+    const messageToPost = req.body.messageBody;
+    return Group.findById(groupId)
+      .then((group_admin) => {
+        if (!group_admin) {
+          return res.sendStatus(404).send({ message: 'Group not found' });
+        }
+        Message.create({
+          messageBody: messageToPost,
+          priority: req.body.priority,
+          //userId: req.session.user.id,
+          groupId: group_admin.id
+        });
+        return res.send('Message sent');
+      })
+      .catch(error => res.status(404).send(error));
+  },
 };  
