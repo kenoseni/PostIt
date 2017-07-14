@@ -14,24 +14,25 @@ and then send messages out to these groups whenever they want.
 
 ### Structure
 * The following folders and files available
-*bin
-**www
-*client
-**css
-*routes
-**dashboard
-**login
-**postpage
-**register
-**welcome
-*server
-**config
-**controllers
-**migrations
-**models
-**routes
-**seeders
-*templates
+* bin
+-- www
+* client
+-- css
+-- fonts
+* routes
+--dashboard
+--login
+--postpage
+--register
+--welcome
+* server
+--config
+--controllers
+--migrations
+--models
+--routes
+--seeders
+* templates
 
 ## DEPENDENCIES
 Nodejs, Html, Css, Postgresql etc
